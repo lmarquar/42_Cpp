@@ -1,7 +1,7 @@
 #ifndef ICHARACTER_H
 # define ICHARACTER_H
 
-#include "../Materias/AMateria.hpp"
+class AMateria;
 
 class ICharacter
 {

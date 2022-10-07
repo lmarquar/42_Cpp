@@ -5,7 +5,8 @@ SRC_MATER	:= AMateria.cpp Cure.cpp Ice.cpp
 SRC_DIR_CHR	:= Character/
 SRC_DIR_MAT	:= Materias/
 SRC			:= $(addprefix $(SRC_DIR_CHR), $(SRC_CHARACT)) \
-				$(addprefix $(SRC_DIR_MAT), $(SRC_MATER))
+				$(addprefix $(SRC_DIR_MAT), $(SRC_MATER)) \
+				main.cpp
 NAME		:= a.out
 
 all: $(NAME)

@@ -7,6 +7,9 @@
 
 class Cure : public AMateria
 {
+	protected:
+		static std::string _type;
+
 	public:
 		// Constructors
 		Cure();

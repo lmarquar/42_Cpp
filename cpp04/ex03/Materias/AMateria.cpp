@@ -1,6 +1,6 @@
 #include "AMateria.hpp"
 
-const std::string AMateria::_type = "amateria";
+std::string AMateria::_type = "amateria";
 
 // Constructors
 AMateria::AMateria()
@@ -10,12 +10,13 @@ AMateria::AMateria()
 
 AMateria::AMateria(const AMateria &copy)
 {
-	std::cout << "\e[0;33mCopy Constructor called of AMateria\e[0m" << std::endl;
+	*this = copy;
+	std::cout << "\e[0;33mCopy Constructor called of " << copy.get_type() << "\e[0m" << std::endl;
 }
 
 AMateria::AMateria(std::string const &type)
 {
-	std::cout << "\e[0;33mFields Constructor called of AMateria\e[0m" << std::endl;
+	std::cout << "\e[0;33mFields Constructor called of " << type << "\e[0m" << std::endl;
 }
 
 
@@ -29,6 +30,7 @@ AMateria::~AMateria()
 // Operators
 AMateria & AMateria::operator=(const AMateria &assign)
 {
+	std::cout << "\e[0;33m= operator called of " << assign.get_type() << "\e[0m" << std::endl;
 	return *this;
 }
 
@@ -37,4 +39,11 @@ AMateria & AMateria::operator=(const AMateria &assign)
 const std::string & AMateria::get_type() const
 {
 	return _type;
+}
+
+
+// Functions
+void AMateria::use(ICharacter& target)
+{
+	std::cout << "* shoots an AMateria bolt at " << target.getName() << " *";
 }

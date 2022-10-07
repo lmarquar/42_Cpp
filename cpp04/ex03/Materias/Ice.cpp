@@ -1,6 +1,6 @@
 #include "Ice.hpp"
 
-const std::string AMateria::_type = "ice";
+std::string Ice::_type = "ice";
 
 // Constructors
 Ice::Ice()
@@ -10,12 +10,14 @@ Ice::Ice()
 
 Ice::Ice(const Ice &copy)
 {
+	*this = copy;
 	std::cout << "\e[0;33mCopy Constructor called of Ice\e[0m" << std::endl;
 }
 
 Ice::Ice(std::string const &type)
 {
-	std::cout << "\e[0;33mFields Constructor called of Ice\e[0m" << std::endl;
+	
+	std::cout << "\e[0;33mFields Constructor called of " << type << "\e[0m" << std::endl;
 }
 
 
@@ -29,6 +31,7 @@ Ice::~Ice()
 // Operators
 Ice & Ice::operator=(const Ice &assign)
 {
+	std::cout << "\e[0;33m= operator called of " << assign.get_type() << "\e[0m" << std::endl;
 	return *this;
 }
 
@@ -43,5 +46,11 @@ const std::string & Ice::get_type() const
 // Functions
 void Ice::use(ICharacter& target)
 {
-	std::cout << "* shoots an ice bolt at " << target << " *";
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *";
+}
+
+Ice* Ice::clone() const
+{
+	Ice *dolly = new Ice(*this);
+	return (dolly);
 }

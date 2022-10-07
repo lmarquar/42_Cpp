@@ -1,30 +1,50 @@
-#ifndef CURE_HPP
-# define CURE_HPP
+#include "Cure.hpp"
 
-# include <iostream>
-# include <string>
- #include "AMateria.hpp"
+std::string Cure::_type = "Cure";
 
-class Cure : public AMateria
+// Constructors
+Cure::Cure()
 {
-	public:
-		// Constructors
-		Cure();
-		Cure(const Cure &copy);
-		Cure(std::string const &type);
-		
-		// Destructor
-		~Cure();
-		
-		// Operators
-		Cure & operator=(const Cure &assign);
-		
-		// Getters / Setters
-		std::string const & get_type() const;
+	std::cout << "\e[0;33mDefault Constructor called of Cure\e[0m" << std::endl;
+}
 
-		// Functions
-		virtual Cure* clone() const = 0;
-		virtual void use(ICharacter& target);
-};
+Cure::Cure(const Cure &copy)
+{
+	*this = copy;
+	std::cout << "\e[0;33mCopy Constructor called of Cure\e[0m" << std::endl;
+}
 
-#endif
+Cure::Cure(std::string const &type)
+{
+	
+	std::cout << "\e[0;33mFields Constructor called of " << type << "\e[0m" << std::endl;
+}
+
+
+// Destructor
+Cure::~Cure()
+{
+	std::cout << "\e[0;31mDestructor called of Cure\e[0m" << std::endl;
+}
+
+
+// Operators
+Cure & Cure::operator=(const Cure &assign)
+{
+	std::cout << "\e[0;33m= operator called of " << assign.get_type() << "\e[0m" << std::endl;
+	return *this;
+}
+
+
+// Getters / Setters
+const std::string & Cure::get_type() const
+{
+	return _type;
+}
+
+
+// Functions
+void Cure::use(ICharacter& target)
+{
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+}

@@ -7,6 +7,8 @@
 
 class Ice : public AMateria
 {
+	protected:
+		static std::string _type;
 	public:
 		// Constructors
 		Ice();
@@ -23,7 +25,7 @@ class Ice : public AMateria
 		std::string const & get_type() const;
 
 		// Functions
-		virtual Ice* clone() const = 0;
+		Ice* clone() const;
 		void use(ICharacter& target);
 };
 

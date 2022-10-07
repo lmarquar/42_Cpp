@@ -14,7 +14,7 @@ class AMateria
 		AMateria(std::string const &type);
 		
 		// Destructor
-		~AMateria();
+		virtual ~AMateria();
 		
 		// Operators
 		AMateria & operator=(const AMateria &assign);
@@ -27,7 +27,7 @@ class AMateria
 		virtual void use(ICharacter& target);
 		
 	protected:
-		static std::string const _type;
+		static std::string _type;
 
 };
 
