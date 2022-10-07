@@ -1,6 +1,6 @@
 #include "Cure.hpp"
 
-std::string Cure::_type = "Cure";
+std::string Cure::_type = "cure";
 
 // Constructors
 Cure::Cure()

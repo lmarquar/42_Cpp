@@ -25,7 +25,7 @@ class MateriaSource : public IMateriaSource
 		AMateria* createMateria(std::string const & type);
 		
 	private:
-		AMateria *_amaterias[];
+		AMateria *_amaterias[4];
 };
 
 #endif
