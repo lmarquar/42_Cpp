@@ -9,6 +9,14 @@ Character::Character()
 	std::cout << "\e[0;33mDefault Constructor called of Character\e[0m" << std::endl;
 }
 
+Character::Character(std::string name)
+{
+	_name = name;
+	for(int i = 0; i < 4; i++)
+		_amaterias[i] = NULL;
+	std::cout << "\e[0;33mDefault Constructor called of Character\e[0m" << std::endl;
+}
+
 Character::Character(const Character &copy)
 {
 	for(int i = 0; i < 4; i++)
@@ -67,9 +75,12 @@ void Character::setName(std::string name)
 void Character::equip(AMateria* m)
 {
 	for(int i = 0; i < 4; i++)
-	{
+		{
 		if (!_amaterias[i])
+		{
 			_amaterias[i] = m;
+			break ;
+		}
 	}
 }
 

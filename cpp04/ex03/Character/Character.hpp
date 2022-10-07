@@ -6,11 +6,12 @@
 # include "../Materias/AMateria.hpp"
 # include "ICharacter.hpp"
 
-class Character : ICharacter
+class Character : public ICharacter
 {
 	public:
 		// Constructors
 		Character();
+		Character(std::string name);
 		Character(const Character &copy);
 		Character(AMateria *amaterias[4], std::string name);
 		

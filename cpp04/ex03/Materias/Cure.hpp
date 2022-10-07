@@ -26,7 +26,7 @@ class Cure : public AMateria
 		std::string const & get_type() const;
 
 		// Functions
-		virtual Cure* clone() const = 0;
+		Cure* clone() const;
 		void use(ICharacter& target);
 };
 
