@@ -6,7 +6,6 @@ Character::Character()
 	_name = "";
 	for(int i = 0; i < 4; i++)
 		_amaterias[i] = NULL;
-	std::cout << "\e[0;33mDefault Constructor called of Character\e[0m" << std::endl;
 }
 
 Character::Character(std::string name)
@@ -14,7 +13,6 @@ Character::Character(std::string name)
 	_name = name;
 	for(int i = 0; i < 4; i++)
 		_amaterias[i] = NULL;
-	std::cout << "\e[0;33mDefault Constructor called of Character\e[0m" << std::endl;
 }
 
 Character::Character(const Character &copy)
@@ -22,7 +20,6 @@ Character::Character(const Character &copy)
 	for(int i = 0; i < 4; i++)
 		_amaterias[i] = copy.getAmateria(i);
 	_name = copy.getName();
-	std::cout << "\e[0;33mCopy Constructor called of Character\e[0m" << std::endl;
 }
 
 
@@ -34,7 +31,6 @@ Character::~Character()
 		if (_amaterias[i] != NULL)
 			delete _amaterias[i];
 	}
-	std::cout << "\e[0;31mDestructor called of Character\e[0m" << std::endl;
 }
 
 
@@ -75,7 +71,7 @@ void Character::setName(std::string name)
 void Character::equip(AMateria* m)
 {
 	for(int i = 0; i < 4; i++)
-		{
+	{
 		if (!_amaterias[i])
 		{
 			_amaterias[i] = m;
@@ -101,6 +97,8 @@ void Character::use(int idx, ICharacter& target)
 bool Character::out_of_bounds(int idx)
 {
 	if (idx < 0 || idx > 4)
+		return (true);
+	if (!_amaterias[idx])
 		return (true);
 	return (false);
 }

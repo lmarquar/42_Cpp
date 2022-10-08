@@ -7,14 +7,10 @@
 
 class Cure : public AMateria
 {
-	protected:
-		static std::string _type;
-
 	public:
 		// Constructors
 		Cure();
 		Cure(const Cure &copy);
-		Cure(std::string const &type);
 		
 		// Destructor
 		~Cure();

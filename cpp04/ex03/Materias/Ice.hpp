@@ -7,13 +7,10 @@
 
 class Ice : public AMateria
 {
-	protected:
-		static std::string _type;
 	public:
 		// Constructors
 		Ice();
 		Ice(const Ice &copy);
-		Ice(std::string const &type);
 		
 		// Destructor
 		~Ice();

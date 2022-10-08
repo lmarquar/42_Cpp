@@ -1,37 +1,29 @@
 #include "Ice.hpp"
 
-std::string Ice::_type = "ice";
-
 // Constructors
 Ice::Ice()
 {
-	std::cout << "\e[0;33mDefault Constructor called of Ice\e[0m" << std::endl;
+	_type = "ice";
 }
 
-Ice::Ice(const Ice &copy)
+Ice::Ice(const Ice &copy) : AMateria::AMateria(copy)
 {
 	*this = copy;
-	std::cout << "\e[0;33mCopy Constructor called of Ice\e[0m" << std::endl;
-}
-
-Ice::Ice(std::string const &type)
-{
-	
-	std::cout << "\e[0;33mFields Constructor called of " << type << "\e[0m" << std::endl;
+	_type = "ice";
 }
 
 
 // Destructor
 Ice::~Ice()
 {
-	std::cout << "\e[0;31mDestructor called of Ice\e[0m" << std::endl;
 }
 
 
 // Operators
 Ice & Ice::operator=(const Ice &assign)
 {
-	std::cout << "\e[0;33m= operator called of " << assign.get_type() << "\e[0m" << std::endl;
+	(void) assign;
+	_type = "ice";
 	return *this;
 }
 
@@ -46,7 +38,7 @@ const std::string & Ice::get_type() const
 // Functions
 void Ice::use(ICharacter& target)
 {
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *";
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
 
 Ice* Ice::clone() const

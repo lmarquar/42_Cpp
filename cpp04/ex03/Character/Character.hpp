@@ -31,7 +31,7 @@ class Character : public ICharacter
 		void equip(AMateria* m);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
-		static bool out_of_bounds(int idx);
+		bool out_of_bounds(int idx);
 		
 	private:
 		AMateria *_amaterias[4];

@@ -3,7 +3,6 @@
 // Constructors
 MateriaSource::MateriaSource()
 {
-	std::cout << "\e[0;33mDefault Constructor called of MateriaSource\e[0m" << std::endl;
 }
 
 MateriaSource::MateriaSource(const MateriaSource &copy)
@@ -15,7 +14,6 @@ MateriaSource::MateriaSource(const MateriaSource &copy)
 // Destructor
 MateriaSource::~MateriaSource()
 {
-	std::cout << "\e[0;31mDestructor called of MateriaSource\e[0m" << std::endl;
 	for(int i = 0; i < 4; i++)
 	{
 		if (_amaterias[i] != NULL)
@@ -49,7 +47,7 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 {
 	for(int i = 0; i < 4; i++)
 	{
-		if (_amaterias[i]->get_type() == type)
+		if (_amaterias[i] && _amaterias[i]->get_type() == type)
 			return (_amaterias[i]->clone());
 	}
 	return (NULL);

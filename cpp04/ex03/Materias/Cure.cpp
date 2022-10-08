@@ -1,37 +1,29 @@
 #include "Cure.hpp"
 
-std::string Cure::_type = "cure";
-
 // Constructors
 Cure::Cure()
 {
-	std::cout << "\e[0;33mDefault Constructor called of Cure\e[0m" << std::endl;
+	_type = "cure";
 }
 
-Cure::Cure(const Cure &copy)
+Cure::Cure(const Cure &copy) : AMateria::AMateria(copy)
 {
 	*this = copy;
-	std::cout << "\e[0;33mCopy Constructor called of Cure\e[0m" << std::endl;
-}
-
-Cure::Cure(std::string const &type)
-{
-	
-	std::cout << "\e[0;33mFields Constructor called of " << type << "\e[0m" << std::endl;
+	_type = "cure";
 }
 
 
 // Destructor
 Cure::~Cure()
 {
-	std::cout << "\e[0;31mDestructor called of Cure\e[0m" << std::endl;
 }
 
 
 // Operators
 Cure & Cure::operator=(const Cure &assign)
 {
-	std::cout << "\e[0;33m= operator called of " << assign.get_type() << "\e[0m" << std::endl;
+	(void)assign;
+	_type = "cure";
 	return *this;
 }
 

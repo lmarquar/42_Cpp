@@ -10,8 +10,7 @@ class AMateria
 	public:
 		// Constructors
 		AMateria();
-		AMateria(const AMateria &copy);
-		AMateria(std::string const &type);
+		AMateria(AMateria const &copy);
 		
 		// Destructor
 		virtual ~AMateria();
@@ -27,7 +26,7 @@ class AMateria
 		virtual void use(ICharacter& target);
 		
 	protected:
-		static std::string _type;
+		std::string _type;
 
 };
 
