@@ -1,5 +1,5 @@
-CC			:= g++
-CFLAGS		:= -Wall -Werror -Wextra -std=c++98 -g
+CC			:= c++
+CFLAGS		:= -Wall -Werror -Wextra -std=c++98
 SRC			:= Bureaucrat.cpp main.cpp
 NAME		:= a.out
 
@@ -10,6 +10,8 @@ re: fclean all
 $(NAME): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
-fclean:
+clean:
 	rm -f $(NAME)
+
+fclean:
 	rm -rfd $(NAME).dSYM
