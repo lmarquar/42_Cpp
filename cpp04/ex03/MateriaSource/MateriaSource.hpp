@@ -20,6 +20,9 @@ class MateriaSource : public IMateriaSource
 		// Operators
 		MateriaSource & operator=(const MateriaSource &assign);
 
+		// Getters
+        AMateria *getMateria(int i) const;
+
 		// Function
 		void learnMateria(AMateria*);
 		AMateria* createMateria(std::string const & type);

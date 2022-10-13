@@ -10,18 +10,16 @@ class Dog : public Animal
 	public:
 		// Constructors
 		Dog();
+		Dog(const Dog &copy);
 		
 		// Destructor
 		~Dog();
-		
+
+		// Operators
+		Dog & operator=(const Dog &assign);
 
 		// Functions
 		void	makeSound() const;
-		
-		
-	protected:
-		std::string _type;
-		
 };
 
 #endif

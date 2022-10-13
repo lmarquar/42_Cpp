@@ -48,5 +48,5 @@ class Form
 
 // Stream operators
 std::ostream & operator<<(std::ostream &stream, const Form &object);
-
+#include "../Bureaucrat.hpp"
 #endif

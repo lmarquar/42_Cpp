@@ -10,18 +10,16 @@ class Cat : public Animal
 	public:
 		// Constructors
 		Cat();
-		
+		Cat(const Cat &copy);
+
 		// Destructor
 		~Cat();
-		
+
+		// Operators
+		Cat & operator=(const Cat &assign);
 
 		// Functions
 		void	makeSound() const;
-		
-		
-	protected:
-		std::string _type;
-		
 };
 
 #endif

@@ -23,7 +23,7 @@ class Animal
 
 
 		// Functions
-		virtual void	makeSound() const;
+		void	makeSound() const;
 		
 	protected:
 		std::string _type;

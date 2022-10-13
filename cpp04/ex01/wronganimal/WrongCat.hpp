@@ -10,18 +10,13 @@ class WrongCat : public WrongAnimal
 	public:
 		// Constructors
 		WrongCat();
+		WrongCat(const WrongCat &copy);
 		
 		// Destructor
 		~WrongCat();
 		
-
-		// Functions
-		void	makeSound() const;
-		
-		
-	protected:
-		std::string _type;
-		
+		// Operators
+		WrongCat & operator=(const WrongCat &assign);
 };
 
 #endif

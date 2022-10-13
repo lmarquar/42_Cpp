@@ -12,12 +12,15 @@ int main()
 
 	Brain *brain = new Brain();
 	Cat catty(brain);
-	brain->setIdea(0, "find a girlfriend");
-	std::cout << catty.getBrain()->getIdea(0) << std::endl;
+	std::cout << "Proof of deep copy" << std::endl;
+	brain->setIdea(0, "hmm i should do more sport");
+	std::cout << "Cat thought(0): " << catty.getBrain()->getIdea(0) << std::endl;
 	Cat cattyclone = catty;
-	cattyclone.getBrain()->setIdea(0, "find a way to get back to kickboxing");
-	std::cout << cattyclone.getBrain()->getIdea(0) << std::endl;
-	std::cout << catty.getBrain()->getIdea(0) << std::endl;
+	cattyclone.getBrain()->setIdea(0, "find a sports group");
+	std::cout << "Cat_clone overwritten thought(0): " << cattyclone.getBrain()->getIdea(0) << std::endl;
+	std::cout << "Cat thought(0): " << catty.getBrain()->getIdea(0) << std::endl;
+	std::cout << "Cat type: " << catty.getType() << std::endl;
+	std::cout << "Cat_clone type: " << cattyclone.getType() << std::endl;
 
 	Animal *animals[10];
 	for (int i = 0; i < 5; i++)

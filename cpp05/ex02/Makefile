@@ -1,6 +1,9 @@
 CC			:= c++
-CFLAGS		:= -Wall -Werror -Wextra -std=c++98
-SRC			:= Bureaucrat.cpp Form.cpp main.cpp
+CFLAGS		:= -Wall -Werror -Wextra -std=c++98 -I./Forms/
+SRC_DIR_FORM:= Forms/
+SRC_FORM	:= Form.cpp
+SRC			:= Bureaucrat.cpp main.cpp \
+				$(addprefix $(SRC_DIR_FORM), $(SRC_FORM))
 NAME		:= a.out
 
 all: $(NAME)

@@ -1,5 +1,4 @@
 #include "Form.hpp"
-#include "Bureaucrat.hpp"
 
 // Constructors
 Form::Form() : _name(""), _signMinGrade(1), _execMinGrade(1)

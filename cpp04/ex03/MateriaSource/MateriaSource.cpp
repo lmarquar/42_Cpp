@@ -7,9 +7,17 @@ MateriaSource::MateriaSource()
 
 MateriaSource::MateriaSource(const MateriaSource &copy)
 {
-	(void) copy;
+	for(int i = 0; i < 4; i++)
+	{
+		this->_amaterias[i] = copy.getMateria(i);
+	}
 }
 
+// Getters
+AMateria *MateriaSource::getMateria(int i) const
+{
+	return _amaterias[i];
+}
 
 // Destructor
 MateriaSource::~MateriaSource()
@@ -25,7 +33,10 @@ MateriaSource::~MateriaSource()
 // Operators
 MateriaSource & MateriaSource::operator=(const MateriaSource &assign)
 {
-	(void) assign;
+	for(int i = 0; i < 4; i++)
+	{
+		this->_amaterias[i] = assign.getMateria(i);
+	}
 	return *this;
 }
 

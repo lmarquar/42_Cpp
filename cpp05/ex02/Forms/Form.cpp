@@ -1,5 +1,4 @@
 #include "Form.hpp"
-#include "Bureaucrat.hpp"
 
 // Constructors
 Form::Form() : _name(""), _signMinGrade(1), _execMinGrade(1)
@@ -10,7 +9,7 @@ Form::Form() : _name(""), _signMinGrade(1), _execMinGrade(1)
 
 Form::Form(const Form &copy) : _name(copy.getName()), _signMinGrade(copy.getSignMinGrade()), _execMinGrade(copy.getExecMinGrade())
 {
-	_issigned = copy.getIssigned();
+	_issigned = copy.getIsSigned();
 	std::cout << "\e[0;33mCopy Constructor called of Form\e[0m" << std::endl;
 }
 
@@ -36,7 +35,7 @@ Form::~Form()
 // Operators
 Form & Form::operator=(const Form &assign)
 {
-	_issigned = assign.getIssigned();
+	_issigned = assign.getIsSigned();
 	return *this;
 }
 
@@ -46,11 +45,11 @@ std::string const Form::getName() const
 {
 	return _name;
 }
-bool Form::getIssigned() const
+bool Form::getIsSigned() const
 {
 	return _issigned;
 }
-void Form::setIssigned(bool issigned)
+void Form::setIsSigned(bool issigned)
 {
 	_issigned = issigned;
 }
@@ -94,7 +93,7 @@ const char * Form::GradeTooLowException::what() const throw()
 // Stream operators
 std::ostream & operator<<(std::ostream &stream, const Form &object)
 {
-	stream	<< "" << object.getName() << "\nissigned: " << object.getIssigned() <<
+	stream	<< "" << object.getName() << "\nissigned: " << object.getIsSigned() <<
 			"\ngrade required to sign: " << object.getSignMinGrade() <<
 			"\ngrade required to execute: " << object.getExecMinGrade() << std::endl;
 	return stream;

@@ -15,20 +15,21 @@ class Form
 		Form(std::string const name, bool issigned, int const signMinGrade, int const execMinGrade);
 		
 		// Destructor
-		~Form();
+		virtual ~Form();
 		
 		// Operators
 		Form & operator=(const Form &assign);
 		
 		// Getters / Setters
 		std::string const getName() const;
-		bool getIssigned() const;
-		void setIssigned(bool issigned);
+		bool getIsSigned() const;
+		void setIsSigned(bool issigned);
 		int getSignMinGrade() const;
 		int getExecMinGrade() const;
 
 		// Functions
 		bool beSigned(Bureaucrat *bureaucrat);
+		virtual bool beExecuted(Bureaucrat *bureaucrat) = 0;
 		
 		// Exceptions
 		class GradeTooHighException : public std::exception {
@@ -48,5 +49,5 @@ class Form
 
 // Stream operators
 std::ostream & operator<<(std::ostream &stream, const Form &object);
-
+#include "../Bureaucrat.hpp"
 #endif

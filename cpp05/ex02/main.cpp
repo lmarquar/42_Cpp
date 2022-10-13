@@ -15,8 +15,8 @@ int main()
 	return (0); */
 
 	// Error checks
-	Form form("testForm", 2, 1, 1);
-	Bureaucrat bureaucrat("testBureaucrat", 0);
+	Form form("testForm", 0, 1, 1);
+	Bureaucrat bureaucrat("testBureaucrat", 2);
 	std::cout << "Form: " << form << std::endl;
 	std::cout << "Bureaucrat: " << bureaucrat << std::endl;
 	try{
