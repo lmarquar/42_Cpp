@@ -1,30 +1,21 @@
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
-/* 	Form form("testForm", 0, 1, 1);
-	Bureaucrat bureaucrat("testBureaucrat", 2);
-
-	try{
-		bureaucrat.signForm(form);
-	}
-	catch(std::exception &e){
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << "besigned: " << form.getIssigned() << std::endl;
-	return (0); */
-
-	// Error checks
-	Form form("testForm", 0, 1, 1);
-	Bureaucrat bureaucrat("testBureaucrat", 2);
+	ShrubberyCreationForm form("testForm");
+	Bureaucrat bureaucrat("testBureaucrat", 1);
 	std::cout << "Form: " << form << std::endl;
 	std::cout << "Bureaucrat: " << bureaucrat << std::endl;
 	try{
-		bureaucrat.signForm(form);
+//		bureaucrat.signForm(form);
+		bureaucrat.executeForm(form);
 	}
 	catch(std::exception &e){
 		std::cout << e.what() << std::endl;
 	}
-	std::cout << "besigned: " << form.getIssigned() << std::endl;
+	std::cout << "besigned: " << form.getIsSigned() << std::endl;
 	return (0);
 }
