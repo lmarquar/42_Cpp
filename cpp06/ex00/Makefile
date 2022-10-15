@@ -15,3 +15,10 @@ clean:
 fclean: clean
 	rm -rfd $(NAME).dSYM
 	rm -f $(NAME)
+
+LAST := 127
+NUMBERS := $(shell seq 0 ${LAST})
+JOBS := $(addprefix job,${NUMBERS})
+.PHONY: all ${JOBS}
+numbers: ${JOBS} ; echo "$@ success"
+${JOBS}: job%: ; ./$(NAME) $*
