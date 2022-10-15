@@ -14,8 +14,8 @@ $(NAME): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 clean:
-	rm -f $(NAME)
 
-fclean:
+fclean: clean
 	rm -rfd $(NAME).dSYM
+	rm -f $(NAME)
 	rm -f *_shrubbery

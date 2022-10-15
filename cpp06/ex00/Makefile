@@ -1,7 +1,7 @@
 CC			:= c++
 CFLAGS		:= -Wall -Werror -Wextra -std=c++98
-SRC			:= Bureaucrat.cpp main.cpp
-NAME		:= a.out
+SRC			:= main.cpp
+NAME		:= convert
 
 all: $(NAME)
 

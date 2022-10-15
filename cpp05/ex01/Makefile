@@ -14,7 +14,7 @@ $(NAME): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 clean:
-	rm -f $(NAME)
 
-fclean:
+fclean: clean
+	rm -f $(NAME)
 	rm -rfd $(NAME).dSYM
