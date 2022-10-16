@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 
 void cast_char(char c)
 {
@@ -17,6 +18,20 @@ void cast_char(char c)
 	std::cout << std::setprecision(1) << std::fixed << "double: " << d << std::endl;
 }
 
+cast_double()
+
+bool isDouble(std::string str)
+{
+    char* endptr = 0;
+    std::strtod(str.c_str(), &endptr);
+
+    if(*endptr != '\0' || endptr == str)
+        return false;
+    return true;
+}
+
+
+
 int main(int argc, char **argv)
 {
 	if (argc != 2)
@@ -26,5 +41,7 @@ int main(int argc, char **argv)
 	}
 	if (!argv[1][1] && (argv[1][0] < '0' || argv[1][0] > '9'))
 		cast_char(argv[1][0]);
+	if (isDouble(argv[1]))
+		cast_double(std::strtod(argv[1], (char *)&NULL));
 	return (0);
 }
