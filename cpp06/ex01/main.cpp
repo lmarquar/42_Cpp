@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+#include <cstdint>
 
 struct Data
 {
@@ -8,7 +9,7 @@ struct Data
 
 uintptr_t serialize(Data* ptr)
 {
-	uintptr_t uintptr = (uintptr_t) ptr;
+	uintptr_t uintptr = reinterpret_cast<uintptr_t>(ptr);
 	return uintptr;
 }
 
