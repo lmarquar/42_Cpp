@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
-#include <cstdint>
+#include <cstdlib>
+#include <stdint.h>
 
 struct Data
 {
@@ -17,7 +18,7 @@ Data* deserialize(uintptr_t raw)
 {
 	Data* data;
 
-	data = (Data*) raw;
+	data = reinterpret_cast<Data*>(raw);
 	return data;
 }
 
