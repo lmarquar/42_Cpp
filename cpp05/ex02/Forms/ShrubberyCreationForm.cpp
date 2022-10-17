@@ -43,9 +43,9 @@ std::string const ShrubberyCreationForm::getTarget() const
 
 
 // Functions
-bool ShrubberyCreationForm::beExecuted(Bureaucrat *bureaucrat)
+bool ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	if (bureaucrat->getGrade() <= getExecMinGrade() && getIsSigned())
+	if (executor.getGrade() <= getExecMinGrade() && getIsSigned())
 	{
 		std::ofstream	out;
 		std::string		filename;
@@ -63,7 +63,7 @@ bool ShrubberyCreationForm::beExecuted(Bureaucrat *bureaucrat)
 		out.close();
 		return true;
 	}
-	else if (bureaucrat->getGrade() > getExecMinGrade())
+	else if (executor.getGrade() > getExecMinGrade())
 		throw(GradeTooLowToExecException());
 	else
 		throw(UnsignedFormException());

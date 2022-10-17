@@ -43,9 +43,9 @@ std::string const RobotomyRequestForm::getTarget() const
 
 
 // Functions
-bool RobotomyRequestForm::beExecuted(Bureaucrat *bureaucrat)
+bool RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	if (bureaucrat->getGrade() <= getExecMinGrade() && getIsSigned())
+	if (executor.getGrade() <= getExecMinGrade() && getIsSigned())
 	{
 		std::cout << "*brbrbrbrbrbrbbrbrbrbrbrrrrrrrrrrrrrrrrrrr*" << std::endl;
 		srand(time(NULL));
@@ -55,7 +55,7 @@ bool RobotomyRequestForm::beExecuted(Bureaucrat *bureaucrat)
 			std::cout << "robotomization failed" << std::endl;
 		return true;
 	}
-	else if (bureaucrat->getGrade() > getExecMinGrade())
+	else if (executor.getGrade() > getExecMinGrade())
 		throw(GradeTooLowToExecException());
 	else
 		throw(UnsignedFormException());

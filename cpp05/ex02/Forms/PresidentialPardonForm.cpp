@@ -43,14 +43,14 @@ std::string const PresidentialPardonForm::getTarget() const
 
 
 // Functions
-bool PresidentialPardonForm::beExecuted(Bureaucrat *bureaucrat)
+bool PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-	if (bureaucrat->getGrade() <= getExecMinGrade() && getIsSigned())
+	if (executor.getGrade() <= getExecMinGrade() && getIsSigned())
 	{
 		std::cout << _target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 		return true;
 	}
-	else if (bureaucrat->getGrade() > getExecMinGrade())
+	else if (executor.getGrade() > getExecMinGrade())
 		throw(GradeTooLowToExecException());
 	else
 		throw(UnsignedFormException());

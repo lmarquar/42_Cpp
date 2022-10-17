@@ -25,7 +25,7 @@ class PresidentialPardonForm : public Form
 		std::string const getTarget() const;
 
 		// Functions
-		bool beExecuted(Bureaucrat *bureaucrat);
+		bool execute(Bureaucrat const & executor) const;
 		
 		// Exceptions
 		class UnsignedFormException : public std::exception {

@@ -10,7 +10,7 @@ int main()
 	std::cout << "Form: " << form << std::endl;
 	std::cout << "Bureaucrat: " << bureaucrat << std::endl;
 	try{
-//		bureaucrat.signForm(form);
+		bureaucrat.signForm(form);
 		bureaucrat.executeForm(form);
 	}
 	catch(std::exception &e){

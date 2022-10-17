@@ -26,7 +26,7 @@ class ShrubberyCreationForm : public Form
 		std::string const getTarget() const;
 
 		// Functions
-		bool beExecuted(Bureaucrat *bureaucrat);
+		bool execute(Bureaucrat const & executor) const;
 		
 		// Exceptions
 		class GradeTooLowToExecException : public std::exception {

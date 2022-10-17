@@ -29,8 +29,8 @@ class Form
 
 		// Functions
 		bool beSigned(Bureaucrat *bureaucrat);
-		virtual bool beExecuted(Bureaucrat *bureaucrat) = 0;
-		
+		virtual bool execute(Bureaucrat const & executor) const = 0;
+
 		// Exceptions
 		class GradeTooHighException : public std::exception {
 			virtual const char* what() const throw();

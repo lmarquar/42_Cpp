@@ -116,7 +116,7 @@ const char * Bureaucrat::GradeTooHighException::what() const throw()
 }
 const char * Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "GradeTooLowException: grade cannot be lower than 1";
+	return "GradeTooLowException: grade cannot be lower than 150";
 }
 
 // Operators

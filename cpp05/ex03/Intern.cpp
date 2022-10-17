@@ -43,7 +43,10 @@ Form* Intern::makeForm(std::string formType, std::string target)
 	for (int i = 0; i < 3; i++)
 	{
 		if (formType == formTypes[i])
+		{
+			std::cout << "Intern creates " << formType << " Form" << std::endl;
 			return (this->*(createForm[i]))();
+		}
 	}
 	std::cout << "Intern::makeForm: formType not found, returning NULL" << std::endl;
 	return (NULL);

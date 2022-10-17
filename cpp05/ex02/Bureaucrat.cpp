@@ -122,16 +122,16 @@ void Bureaucrat::signForm(Form &toBeSigned)
 	}
 }
 
-void Bureaucrat::executeForm(Form &toBeExecuted)
+void Bureaucrat::executeForm(Form const &form)
 {
 	try
 	{
-		toBeExecuted.beExecuted(this);
-		std::cout << _name << " executed " << toBeExecuted.getName() << std::endl;
+		form.execute(*this);
+		std::cout << _name << " executed " << form.getName() << std::endl;
 	}
 	catch (std::exception &e)
 	{
-		std::cout << _name << " couldn't execute " << toBeExecuted.getName() << " because\n\t" << e.what() << std::endl;
+		std::cout << _name << " couldn't execute " << form.getName() << " because\n\t" << e.what() << std::endl;
 	}
 }
 
@@ -142,7 +142,7 @@ const char * Bureaucrat::GradeTooHighException::what() const throw()
 }
 const char * Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "GradeTooLowException: grade cannot be lower than 1";
+	return "GradeTooLowException: grade cannot be lower than 150";
 }
 
 // Operators
