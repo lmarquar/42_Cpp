@@ -1,22 +1,9 @@
 #include <iostream>
-#include "iter.hpp"
-
-void increasebyone(int &i)
-{
-	i++;
-}
+#include "Array.tpp"
 
 int main( void ) {
-	int arr[10];
+	int * a = new int();
 
-	for (int i = 0; i < 10; i++)
-	{
-		arr[i] = rand();
-		std::cout << "arr[" << i << "] = " << arr[i] << std::endl;
-	}
-	iter(arr, 10, &increasebyone);
-	for (int i = 0; i < 10; i++)
-		std::cout << "arr[" << i << "] = " << arr[i] << std::endl;
-
+	std::cout << "a: " << *a << std::endl;
 	return (0);
 }

@@ -1,7 +1,7 @@
 CC			:= c++
 CFLAGS		:= -Wall -Werror -Wextra -Wconversion -std=c++98
 SRC			:= main.cpp
-NAME		:= iter
+NAME		:= arraytest
 
 all: $(NAME)
 

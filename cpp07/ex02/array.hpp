@@ -1,11 +1,20 @@
-#ifndef ITER_HPP
-# define ITER_HPP
+#ifndef ARRAY_HPP
+# define ARRAY_HPP
+
+#include <iostream>
 
 template <typename T>
-void	iter(T arr[], int length, void (*fptr)(T &t))
+class Array
 {
-	for (int i = 0; i < length; i++)
-		fptr(arr[i]);
+	public:
+		Array();
+		Array(int n);
+		Array(const Array &copy);
+		Array & operator=(const Array &assign);
+		~Array();
+
+	private:
+		T	*_arr;
 };
 
 #endif
