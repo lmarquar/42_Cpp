@@ -17,17 +17,18 @@ Array<T>::Array(int n)
 template <typename T>
 Array<T>::Array(const Array<T> &cpy)
 {
-	*this = cpy;
+	_n = cpy.size();
+	_arr = new T[_n];
+	for (int i = 0; i < _n; i++)
+		_arr[i] = cpy[i];
 }
 
 template <typename T>
 Array<T> & Array<T>::operator=(const Array<T> &assign)
 {
-	int n;
-
-	n = assign.size();
-	_arr = new T[n];
-	for (int i = 0; i < n; i++)
+	_n = assign.size();
+	_arr = new T[_n];
+	for (int i = 0; i < _n; i++)
 		_arr[i] = assign[i];
 	return (*this);
 }

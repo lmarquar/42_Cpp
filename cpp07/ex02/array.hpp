@@ -21,7 +21,7 @@ class Array
 			virtual const char* what() const throw();
 		};
 
-	private:
+	public:
 		T	*_arr;
 		int	_n;
 };

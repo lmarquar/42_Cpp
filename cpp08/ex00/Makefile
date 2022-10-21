@@ -1,7 +1,7 @@
 CC			:= c++
-CFLAGS		:= -Wall -Werror -Wextra -Wconversion -std=c++98 -g
+CFLAGS		:= -Wall -Werror -Wextra -Wconversion -std=c++98
 SRC			:= main.cpp
-NAME		:= arraytest
+NAME		:= easyfindtest
 
 all: $(NAME)
 

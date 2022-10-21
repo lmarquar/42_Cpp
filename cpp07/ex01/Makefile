@@ -1,6 +1,6 @@
 CC			:= c++
 CFLAGS		:= -Wall -Werror -Wextra -Wconversion -std=c++98
-SRC			:= main.cpp
+SRC			:= ex01.cpp
 NAME		:= iter
 
 all: $(NAME)
