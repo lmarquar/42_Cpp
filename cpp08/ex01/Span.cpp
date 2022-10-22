@@ -119,4 +119,3 @@ int Span::shortestSpan() const
 	return (min_span);
 }
 
-

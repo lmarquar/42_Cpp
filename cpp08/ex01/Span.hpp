@@ -39,12 +39,15 @@ class Span
 		void addNumber(int n);
 		int shortestSpan() const;
 		int longestSpan() const;
-		template
+		template <typename Iterator>
+		void addIterator(Iterator iterator, unsigned length);
 		
 	private:
 		int *_arr;
 		unsigned _N;
 		unsigned _endOfArr;
 };
+
+#include "Span_addIter.tpp"
 
 #endif
