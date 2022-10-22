@@ -4,6 +4,7 @@
 # include <iostream>
 # include <algorithm>
 # include <iterator>
+# include <stack>
 
 template <typename T>
 int	easyfind(T t, int toBeFound);

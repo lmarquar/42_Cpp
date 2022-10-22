@@ -30,10 +30,16 @@ class Span
 			virtual const char* what() const throw();
 		};
 
+		class SpanCannotBeFoundException : public std::exception {
+			public:
+			virtual const char* what() const throw();
+		};
+
 		//Functions
 		void addNumber(int n);
 		int shortestSpan() const;
 		int longestSpan() const;
+		template
 		
 	private:
 		int *_arr;

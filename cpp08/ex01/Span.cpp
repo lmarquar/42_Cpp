@@ -65,6 +65,11 @@ const char * Span::SpanOverflowException::what() const throw()
 	return "maximum amount of numbers already reached";
 }
 
+const char * Span::SpanCannotBeFoundException::what() const throw()
+{
+	return "unsatifying amount of data for calculation (array needs atleast two different values)";
+}
+
 
 //Functions
 void Span::addNumber(int n)
@@ -75,12 +80,43 @@ void Span::addNumber(int n)
 	_endOfArr++;
 }
 
-int Span::shortestSpan() const
+int Span::longestSpan() const
 {
 	int min;
 	int max;
 
+	if (_endOfArr < 2)
+		throw (SpanCannotBeFoundException());
 	min = _arr[0];
-	for (int i = 0; i < _N; i++)
-		
+	max = min;
+	for (unsigned i = 0; i < _N; i++)
+		if (_arr[i] < min)
+			min = _arr[i];
+	for (unsigned i = 0; i < _N; i++)
+		if (_arr[i] > max)
+			max = _arr[i];
+	return (max - min);
 }
+
+int Span::shortestSpan() const
+{
+	int min_span;
+
+	if (_endOfArr < 2)
+		throw (SpanCannotBeFoundException());
+	min_span = 0;
+	for (unsigned i = 0; i < _N; i++)
+	{
+		for (unsigned k = 0; k < _N; k++)
+		{
+			if (_arr[i] != _arr[k])
+			{
+				if (abs(_arr[i] - _arr[k]) < min_span || min_span == 0)
+					min_span = abs(_arr[i] - _arr[k]);
+			}
+		}
+	}
+	return (min_span);
+}
+
+
