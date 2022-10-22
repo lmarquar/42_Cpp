@@ -69,8 +69,18 @@ const char * Span::SpanOverflowException::what() const throw()
 //Functions
 void Span::addNumber(int n)
 {
-	if (_endOfArr >= _N - 1)
+	if (_endOfArr >= _N)
 		throw (SpanOverflowException());
 	_arr[_endOfArr] = n;
 	_endOfArr++;
+}
+
+int Span::shortestSpan() const
+{
+	int min;
+	int max;
+
+	min = _arr[0];
+	for (int i = 0; i < _N; i++)
+		
 }

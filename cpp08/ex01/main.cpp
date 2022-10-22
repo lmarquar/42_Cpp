@@ -4,7 +4,8 @@ int main()
 {
 	Span s(5);
 
-	s.addNumber(10);
+	for (int i = 0; i < 5; i++)
+		s.addNumber(i);
 	std::cout << s.getArrEl(0) << std::endl;
 	return (0);
 }

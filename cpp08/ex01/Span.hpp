@@ -32,6 +32,8 @@ class Span
 
 		//Functions
 		void addNumber(int n);
+		int shortestSpan() const;
+		int longestSpan() const;
 		
 	private:
 		int *_arr;
