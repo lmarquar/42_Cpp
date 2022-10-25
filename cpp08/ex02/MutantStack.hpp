@@ -27,9 +27,10 @@ class MutantStack : public std::stack<T>
 							long,
 							const T*,
 							T> {
-				T t;
+				T	t;
+				int	pos;
 			public:
-				explicit iterator(T _t);
+				explicit iterator(MutantStack<T>::iterator& tag = 0);
 				iterator& operator++();
 		};
 		

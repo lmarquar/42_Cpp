@@ -34,7 +34,22 @@ MutantStack<T> & MutantStack<T>::operator=(const MutantStack<T> &assign)
 //
 //Constructors
 template <typename T>
-MutantStack<T>::iterator::iterator(T _t) : t(_t) {}
+MutantStack<T>::iterator::iterator(MutantStack<T>::iterator& tag) {
+	if (tag != 0)
+		*this = tag;
+	MutantStack<T> cpy = *this;
+	pos = 0;
+	if (t != 0)
+	{
+		while (cpy.top() && cpy.top() != t)
+		{
+			cpy.pop();
+			pos++;
+		}
+		if (!cpy.top())
+			throw
+	}
+}
 
 
 //Operators
