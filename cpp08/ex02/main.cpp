@@ -12,7 +12,6 @@ int main()
 	std::cout << i_vector.at(0) << std::endl;
 	std::cout << *i_vector_iter << std::endl; */
 
-
 	MutantStack<int> m_stack;
  	m_stack.push(1);
 	MutantStack<int> m_stack_cpy = m_stack;
@@ -21,6 +20,5 @@ int main()
 	MutantStack<int>::iterator m_stack_iter(m_stack.begin());
 	m_stack.pop();
 	std::cout << *m_stack_iter << std::endl;
-	m_stack.pop();
 	return (0);
 }
