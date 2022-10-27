@@ -29,24 +29,16 @@ MutantStack<T> & MutantStack<T>::operator=(const MutantStack<T> &assign)
 	return (std::stack<T>::operator=(assign));
 }
 
-//
-// SUBCLASS ITERATOR
-//
-//Constructors
-template <typename T>
-MutantStack<T>::iterator::iterator(T _t) : t(_t) {}
 
-
-//Operators
+// Functions
 template <typename T>
-typename MutantStack<T>::iterator & MutantStack<T>::iterator::operator++()
+typename std::stack<T>::container_type::iterator MutantStack<T>::end()
 {
-	MutantStack<T> cpy(*this);
-
-	while (cpy.top() && cpy.top() != t)
-		cpy.pop();
-	cpy.pop();
-	t = cpy.top();
+	return (std::stack<T>::c.end());
 }
 
-
+template <typename T>
+typename std::stack<T>::container_type::iterator MutantStack<T>::begin()
+{
+	return (std::stack<T>::c.begin());
+}

@@ -5,6 +5,7 @@
 # include <string>
 # include <stack>
 # include <iterator>
+# include <deque>
 
 template <typename T>
 class MutantStack : public std::stack<T>
@@ -21,20 +22,24 @@ class MutantStack : public std::stack<T>
 		MutantStack & operator=(const MutantStack &assign);
 
 		// Classes
-		class iterator : public std::iterator<
+/* 		class iterator : public std::iterator<
 							std::input_iterator_tag,
-							T,
-							long,
-							const T*,
 							T> {
-				T t;
+				T *t;
+				int n;
 			public:
-				explicit iterator(T _t);
+				explicit iterator(MutantStack<T>::iterator<std::input_iterator_tag, T> &stack_it);
 				iterator& operator++();
-		};
-		
+				iterator& operator--();
+				T operator*() const;
+		}; */
+		// std::stack<T>::container_type
+		typedef typename std::stack<T>::container_type::iterator iterator;
+		typename std::stack<T>::container_type::iterator begin();
+		typename std::stack<T>::container_type::iterator end();
+
 	private:
-		
+	
 };
 
 # include "MutantStack.tpp"
