@@ -22,7 +22,7 @@ int main()
 		vect.push_back(rand());
 	std::vector<int>::iterator vect_it = vect.begin();
 	s2.addIterator(vect_it, (unsigned)vect.size());
-	std::cout << s2.getArrEl(4) << std::endl;
+	std::cout << "last element of span: " << s2.getArrEl(s2.getEndOfArr() - 1) << std::endl;
 	std::vector<int>::iterator vect_end = vect.end();
 	std::cout << "end of vector: " << *(vect_end - 1) << std::endl;
 
